@@ -24,9 +24,8 @@ jobs:
     steps:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - name: Checkout
-        uses: actions/checkout@v2
-        with:
-          repository: EpitechPromo2027/B-DOP-200-PAR-2-2-chocolatine-marie.incandela
+        uses: actions/checkout@v3.3.0
+        run: echo git branch --show-current
 
       # Runs a single command using the runners shell
       - name: Run a one-line script
