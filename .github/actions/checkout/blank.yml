@@ -1,0 +1,11 @@
+- name: Checkout
+  uses: actions/checkout@v3
+  with:
+    path: main
+
+- name: Checkout private tools
+  uses: actions/checkout@v3
+  with:
+    repository: EpitechPromo2027/B-DOP-200-PAR-2-2-chocolatine-marie.incandela
+    token: ${{ secrets.GH_PAT }} # `GH_PAT` is a secret that contains your PAT
+    path: main
