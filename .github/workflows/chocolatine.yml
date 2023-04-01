@@ -1,0 +1,30 @@
+name: pain au chocolat
+
+on:
+  # Triggers the workflow on push or pull request events but only for the "main" branch
+  push:
+    branches-ignore:
+    - "ga-ignore-*"
+  pull_request:
+    branches-ignore:
+    - "ga-ignore-*"
+
+env:
+  SOURCE: iMariee/chocolat
+  MIRROR: "EpitechPromo2027/B-DOP-200-PAR-2-1-chocolatine-marie.incandela"
+  EXECUTABLE: "lol"
+  GITHUB_SSH_KEY: ${{ secrets.MY_CHOCO_PRIVATE_SSH_KEY }}
+
+# A workflow run is made up of one or more jobs that can run sequentially or in parallel
+jobs:
+  repository_mirroring:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v3
+      with:
+        fetch-depth: 0
+    - name: Push content to the mirror repository
+      uses: pixta-dev/repository-mirroring-action@v1
+      with:
+        target_repo_url: git@github.com:${{ env.MIRROR }}.git
+        ssh_private_key: ${{ env.GITHUB_SSH_KEY }}
