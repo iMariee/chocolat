@@ -12,8 +12,8 @@ on:
 env:
   SOURCE: iMariee/chocolat
   MIRROR: "EpitechPromo2027/B-DOP-200-PAR-2-1-chocolatine-marie.incandela"
-  EXECUTABLE: "lol"
-  GITHUB_SSH_KEY: ${{ secrets.MY_CHOCO_PRIVATE_SSH_KEY }}
+  EXECUTABLE: "a.out"
+  GITHUB_SSH_KEY: ${{ secrets.GIT_SSH_PRIVATE_KEY }}
 
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
