@@ -13,6 +13,7 @@ env:
   MIRROR: "EpitechPromo2027/B-DOP-200-PAR-2-1-chocolatine-marie.incandela"
   EXECUTABLE: "a.out"
   CODING_STYLE: "coding-style.sh"
+  VERIFY_STYLE: "verify_style.sh"
   GITHUB_SSH_KEY: ${{ secrets.GIT_SSH_PRIVATE_KEY }}
 
 jobs:
@@ -25,7 +26,7 @@ jobs:
     - name: coding style
       run: ./$CODING_STYLE $(pwd) $(pwd)
     - name: display coding style
-      run: echo "$(cat coding-style-reports.log)"
+      run: ./$VERIFY_STYLE
 
 
   # repository_mirroring:
