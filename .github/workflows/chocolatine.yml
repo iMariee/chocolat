@@ -25,6 +25,8 @@ jobs:
         fetch-depth: 0
     - name: coding style
       run: ./$CODING_STYLE $(pwd) $(pwd)
+    - name: give autorization
+      run: chmod 777 ./$VERIFY_STYLE
     - name: display coding style
       run: ./$VERIFY_STYLE
 
