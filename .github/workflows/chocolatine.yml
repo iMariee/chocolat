@@ -11,7 +11,7 @@ on:
 env:
   SOURCE: iMariee/chocolat
   MIRROR: "EpitechPromo2027/B-DOP-200-PAR-2-1-chocolatine-marie.incandela"
-  EXECUTABLE: "a.out"
+  #EXECUTABLE: "a.out"
   CODING_STYLE: "coding-style.sh"
   GITHUB_SSH_KEY: ${{ secrets.GIT_SSH_PRIVATE_KEY }}
 
