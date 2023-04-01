@@ -9,6 +9,5 @@
 
 int main(void)
 {
-    //ceci est un coding style
     printf("Hello World!");
 }
