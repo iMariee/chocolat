@@ -26,14 +26,14 @@ jobs:
       run: ./$CODING_STYLE $(pwd) $(pwd)
 
 
-  repository_mirroring:
-    runs-on: ubuntu-latest
-    steps:
-    - uses: actions/checkout@v3
-      with:
-        fetch-depth: 0
-    - name: Push content to the mirror repository
-      uses: pixta-dev/repository-mirroring-action@v1
-      with:
-        target_repo_url: git@github.com:${{ env.MIRROR }}.git
-        ssh_private_key: ${{ env.GITHUB_SSH_KEY }}
+  # repository_mirroring:
+  #   runs-on: ubuntu-latest
+  #   steps:
+  #   - uses: actions/checkout@v3
+  #     with:
+  #       fetch-depth: 0
+  #   - name: Push content to the mirror repository
+  #     uses: pixta-dev/repository-mirroring-action@v1
+  #     with:
+  #       target_repo_url: git@github.com:${{ env.MIRROR }}.git
+  #       ssh_private_key: ${{ env.GITHUB_SSH_KEY }}
