@@ -1,7 +1,6 @@
 name: pain au chocolat
 
 on:
-  # Triggers the workflow on push or pull request events but only for the "main" branch
   push:
     branches-ignore:
     - "ga-ignore-*"
@@ -13,10 +12,20 @@ env:
   SOURCE: iMariee/chocolat
   MIRROR: "EpitechPromo2027/B-DOP-200-PAR-2-1-chocolatine-marie.incandela"
   EXECUTABLE: "a.out"
+  CODING_STYLE: "coding-style.sh"
   GITHUB_SSH_KEY: ${{ secrets.GIT_SSH_PRIVATE_KEY }}
 
-# A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
+  check_coding_style:
+    runs-on: macos-latest
+    steps:
+    - uses: actions/checkout@v3
+      with:
+        fetch-depth: 0
+    - name: coding style
+      run: ./$CODING_STYLE $(pwd) $(pwd)
+
+
   repository_mirroring:
     runs-on: ubuntu-latest
     steps:
