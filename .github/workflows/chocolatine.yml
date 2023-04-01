@@ -46,7 +46,7 @@ jobs:
     - name: give autorization
       run: chmod 777 ./$VERIFY_EXEC
     - name: verify exec
-      run: ./$VERIFY_EXEC
+      run: ./$VERIFY_EXEC $EXECUTABLE
 
   repository_mirroring:
     runs-on: ubuntu-latest
