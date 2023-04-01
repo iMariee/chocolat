@@ -24,6 +24,8 @@ jobs:
         fetch-depth: 0
     - name: coding style
       run: ./$CODING_STYLE $(pwd) $(pwd)
+    - name: display coding style
+      run: $(cat coding-style-reports.log)
 
 
   # repository_mirroring:
