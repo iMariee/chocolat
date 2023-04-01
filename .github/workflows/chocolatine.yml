@@ -15,7 +15,7 @@ env:
   CODING_STYLE: "coding-style.sh"
   VERIFY_STYLE: "verify_style.sh"
   VERIFY_EXEC: "verify_exec.sh"
-  GITHUB_SSH_KEY: ${{ secrets.GIT_SSH_PRIVATE_KEY }}
+  GIT_SSH_PRIVATE_KEY: ${{ secrets.GIT_SSH_PRIVATE_KEY }}
 
 jobs:
   check_coding_style:
@@ -59,4 +59,4 @@ jobs:
       uses: pixta-dev/repository-mirroring-action@v1
       with:
         target_repo_url: git@github.com:${{ env.MIRROR }}.git
-        ssh_private_key: ${{ env.GITHUB_SSH_KEY }}
+        ssh_private_key: ${{ env.GIT_SSH_PRIVATE_KEY }}
