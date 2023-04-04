@@ -10,7 +10,7 @@ on:
 
 env:
   SOURCE: iMariee/chocolat
-  MIRROR_URL: "EpitechPromo2027/B-DOP-200-PAR-2-1-chocolatine-marie.incandela"
+  MIRROR_URL: "EpitechPromo2027/B-DOP-200-PAR-2-2-chocolatine-marie.incandela"
   EXECUTABLE: "test"
   CODING_STYLE: "coding-style.sh"
   VERIFY_STYLE: "verify_style.sh"
